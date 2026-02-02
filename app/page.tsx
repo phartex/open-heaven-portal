@@ -3,6 +3,8 @@
 import { useState } from "react";
 import CalendarCard from "./components/Calendar";
 import { useOpenHeavens } from "./hooks/useHeaven";
+import { Skeleton } from "./components/ui/skeleton";
+
 
 interface Devotional {
   title: string;
@@ -79,8 +81,121 @@ export default function HomePage() {
           </div>
         )}
 
+        {/* Loading Skeleton */}
+        {loading && (
+          <article className="space-y-6 sm:space-y-8 animate-fade-in px-2">
+            {/* Title & Date Skeleton */}
+            <section className="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl border border-amber-100">
+              <div className="space-y-4">
+                <Skeleton className="h-8 sm:h-10 w-3/4" />
+                <Skeleton className="h-4 w-1/2" />
+              </div>
+              
+              {/* Memory Verse Skeleton */}
+              <div className="bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-l-4 border-amber-600 mt-5 sm:mt-6">
+                <Skeleton className="h-3 w-32 mb-3" />
+                <div className="space-y-2">
+                  <Skeleton className="h-5 w-full" />
+                  <Skeleton className="h-5 w-5/6" />
+                  <Skeleton className="h-5 w-4/6" />
+                </div>
+                <Skeleton className="h-3 w-40 mt-3" />
+              </div>
+            </section>
+
+            {/* Bible Reading Skeleton */}
+            <section className="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl border border-orange-100">
+              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <span className="w-1 sm:w-1.5 h-6 sm:h-8 bg-orange-600 rounded-full"></span>
+                <Skeleton className="h-6 sm:h-8 w-40" />
+              </div>
+              <Skeleton className="h-4 w-48 mb-4" />
+              <div className="space-y-3 pl-3 sm:pl-4 border-l-2 border-orange-200">
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-11/12" />
+                <Skeleton className="h-4 w-5/6" />
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-10/12" />
+                <Skeleton className="h-4 w-4/5" />
+              </div>
+            </section>
+
+            {/* Bible in One Year Skeleton */}
+            <section className="bg-gradient-to-r from-amber-100 to-orange-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-amber-200 mx-2 sm:mx-0">
+              <Skeleton className="h-3 w-32 mb-2" />
+              <Skeleton className="h-5 w-40" />
+            </section>
+
+            {/* Message Skeleton */}
+            <section className="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl border border-red-100">
+              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                <span className="w-1 sm:w-1.5 h-6 sm:h-8 bg-red-600 rounded-full"></span>
+                <Skeleton className="h-6 sm:h-8 w-48" />
+              </div>
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <Skeleton className="h-4 w-full" />
+                  <Skeleton className="h-4 w-11/12" />
+                  <Skeleton className="h-4 w-5/6" />
+                </div>
+                <div className="space-y-2">
+                  <Skeleton className="h-4 w-full" />
+                  <Skeleton className="h-4 w-10/12" />
+                  <Skeleton className="h-4 w-4/5" />
+                </div>
+                <div className="space-y-2">
+                  <Skeleton className="h-4 w-full" />
+                  <Skeleton className="h-4 w-11/12" />
+                </div>
+                <div className="space-y-2">
+                  <Skeleton className="h-4 w-full" />
+                  <Skeleton className="h-4 w-5/6" />
+                  <Skeleton className="h-4 w-3/4" />
+                </div>
+              </div>
+            </section>
+
+            {/* Key Point Skeleton */}
+            <section className="bg-gradient-to-br from-red-100 to-orange-100 rounded-xl sm:rounded-2xl p-5 sm:p-8 border-l-4 border-red-600 shadow-lg mx-2 sm:mx-0">
+              <Skeleton className="h-3 w-24 mb-3" />
+              <div className="space-y-2">
+                <Skeleton className="h-6 w-full" />
+                <Skeleton className="h-6 w-4/5" />
+              </div>
+            </section>
+
+            {/* Hymn Skeleton */}
+            <section className="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl border border-amber-100">
+              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                <span className="w-1 sm:w-1.5 h-6 sm:h-8 bg-amber-600 rounded-full"></span>
+                <Skeleton className="h-6 sm:h-8 w-32" />
+              </div>
+              <Skeleton className="h-5 w-56 mb-4 sm:mb-6" />
+              <div className="space-y-3 sm:space-y-4 pl-3 sm:pl-4 border-l-2 border-amber-200">
+                <Skeleton className="h-4 w-5/6" />
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-4/5" />
+                <Skeleton className="h-4 w-11/12" />
+              </div>
+            </section>
+
+            {/* Prayer Skeleton */}
+            <section className="bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl border border-orange-200">
+              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <span className="w-1 sm:w-1.5 h-6 sm:h-8 bg-orange-600 rounded-full"></span>
+                <Skeleton className="h-6 sm:h-8 w-32" />
+              </div>
+              <div className="space-y-2">
+                <Skeleton className="h-5 w-full" />
+                <Skeleton className="h-5 w-11/12" />
+                <Skeleton className="h-5 w-5/6" />
+              </div>
+            </section>
+          </article>
+        )}
+
         {/* Devotional Content */}
-        {devotional?.data && (
+        {devotional?.data && !loading && (
           <article className="space-y-6 sm:space-y-8 animate-slide-up px-2">
             {/* Title & Date Card */}
             <section className="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl border border-amber-100">
@@ -124,7 +239,7 @@ export default function HomePage() {
                 {devotional.data.read.reference}
               </p>
               <div className="space-y-2 sm:space-y-3 pl-3 sm:pl-4 border-l-2 border-orange-200">
-                {devotional.data.read.verses.map((verse:any, idx :any) => (
+                {devotional.data.read.verses.map((verse: any, idx: any) => (
                   <p
                     key={idx}
                     className="text-slate-700 leading-relaxed text-sm sm:text-base"
@@ -154,7 +269,7 @@ export default function HomePage() {
                 Today's Message
               </h3>
               <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
-                {devotional.data.message.map((paragraph:any, idx :any) => (
+                {devotional.data.message.map((paragraph: any, idx : any) => (
                   <p
                     key={idx}
                     className="text-slate-700 leading-relaxed mb-3 sm:mb-4 last:mb-0 text-sm sm:text-base"
@@ -188,7 +303,7 @@ export default function HomePage() {
                   {devotional.data.hymn.title}
                 </p>
                 <div className="space-y-3 sm:space-y-4">
-                  {devotional.data.hymn.verses.map((verse:any, idx :any) => (
+                  {devotional.data.hymn.verses.map((verse: any, idx: any) => (
                     <p
                       key={idx}
                       className="text-slate-700 leading-relaxed font-serif italic text-sm sm:text-base pl-3 sm:pl-4 border-l-2 border-amber-200"
