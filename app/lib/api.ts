@@ -5,7 +5,8 @@ import { QueryClient } from "@tanstack/react-query";
 // Axios instance
 export const api = axios.create({
 //   baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
-  baseURL: 'http://localhost:3000',
+  baseURL: 'https://open-heaven-portal-web-api.onrender.com',
+  // baseURL: 'http://localhost:3000',
   timeout: 15000,
 });
 
