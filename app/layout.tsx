@@ -6,6 +6,10 @@ import Providers from "./providers"; // React Query + Toastify wrapper
 export const metadata = {
   title: "Open Heavens",
   description: "Daily Open Heavens Devotional",
+  // icons: {
+  //   icon: "/icon.png",
+  //   apple: "/icon.png",
+  // },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
