@@ -5,6 +5,7 @@ import CalendarCard from "./components/Calendar";
 import { useOpenHeavens } from "./hooks/useHeaven";
 import { Skeleton } from "./components/ui/skeleton";
 import { format } from "path";
+import Image from "next/image";
 
 
 interface Devotional {
@@ -52,6 +53,14 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 text-slate-900 p-3 sm:p-4 md:p-8">
       <div className="mx-auto max-w-4xl">
+
+        <div className="p-2 md:p-5">
+<Image
+          src="/redeem-logo.png" // Replace with your actual image
+          alt="Back" width={40} height={40} className='my-3'
+        />
+        </div>
+        
         {/* Header */}
         <header className="text-center mb-8 sm:mb-10 md:mb-12 animate-fade-in px-2">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-amber-900 mb-2 tracking-tight">
@@ -92,7 +101,7 @@ export default function HomePage() {
                 <Skeleton className="h-8 sm:h-10 w-3/4" />
                 <Skeleton className="h-4 w-1/2" />
               </div>
-              
+
               {/* Memory Verse Skeleton */}
               <div className="bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-l-4 border-amber-600 mt-5 sm:mt-6">
                 <Skeleton className="h-3 w-32 mb-3" />
@@ -271,7 +280,7 @@ export default function HomePage() {
                 Today's Message
               </h3>
               <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
-                {devotional.data.message.map((paragraph: any, idx : any) => (
+                {devotional.data.message.map((paragraph: any, idx: any) => (
                   <p
                     key={idx}
                     className="text-slate-700 leading-relaxed mb-3 sm:mb-4 last:mb-0 text-sm sm:text-base"
