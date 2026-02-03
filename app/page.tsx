@@ -4,6 +4,7 @@ import { useState } from "react";
 import CalendarCard from "./components/Calendar";
 import { useOpenHeavens } from "./hooks/useHeaven";
 import { Skeleton } from "./components/ui/skeleton";
+import { format } from "path";
 
 
 interface Devotional {
@@ -45,6 +46,7 @@ export default function HomePage() {
     const day = String(date.getDate()).padStart(2, "0");
     const formattedDate = `${year}-${month}-${day}`;
     setSelectedDate(formattedDate);
+    console.log(formattedDate);
   };
 
   return (
