@@ -55,12 +55,12 @@ export default function HomePage() {
       <div className="mx-auto max-w-4xl">
 
         <div className="p-2 md:p-5">
-<Image
-          src="/redeem-logo.png" // Replace with your actual image
-          alt="Back" width={40} height={40} className='my-3'
-        />
+          <Image
+            src="/redeem-logo.png"
+            alt="Back" width={40} height={40} className='my-3'
+          />
         </div>
-        
+
         {/* Header */}
         <header className="text-center mb-8 sm:mb-10 md:mb-12 animate-fade-in px-2">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-amber-900 mb-2 tracking-tight">

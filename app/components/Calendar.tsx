@@ -15,6 +15,7 @@ export default function CalendarCard({
   isLoading,
 }: CalendarCardProps) {
   const today = new Date();
+  console.log('drfghjk,.')
 
   return (
     <div className="w-full max-w-sm rounded-lg border bg-card p-4 shadow-sm">
