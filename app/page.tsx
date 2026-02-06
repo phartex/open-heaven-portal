@@ -155,9 +155,16 @@ export default function HomePage() {
             <section className="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl border border-amber-100">
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4 mb-5 sm:mb-6">
                 <div className="flex-1">
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-amber-950 mb-2 sm:mb-3 leading-tight">
+                  <div className="flex flex-row">
+                      <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-amber-950 mb-2 sm:mb-3 leading-tight">
+                   Topic<span className="px-2">-</span>
+                  </h2>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-amber-950 mb-2 sm:mb-3 leading-tight">
                     {devotional.data.topic}
                   </h2>
+
+                  </div>
+                
                   <p className="text-xs sm:text-sm text-amber-600 font-medium tracking-wide uppercase">
                     {new Date(devotional.data.date).toLocaleDateString("en-US", {
                       weekday: "long",
